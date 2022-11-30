@@ -7,13 +7,12 @@ library(ompr.roi)
 library(ROI.plugin.glpk)
 library(leaflet)
 library(geosphere)
+library(readr)
 
 # Load data ----------------------------------------------------------------
-Distanzn <- read_delim("C:/Users/do-khac/Desktop/Santa_8_Distances.csv", 
-                       delim = ";", escape_double = FALSE, col_types = cols(latitude = col_number(), 
-                                                                            longitude = col_number()), trim_ws = TRUE)
-
-locations <- Distanzn
+locations <- read_delim("Santa_7_Distances.csv", 
+                        delim = ";", escape_double = FALSE, col_types = cols(latitude = col_number(), 
+                                                                             longitude = col_number()), trim_ws = TRUE)
 name <- locations$name
 popup <- locations$name
 
